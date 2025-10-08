@@ -2,7 +2,7 @@ const express = require('express');
 const catRouter = require('./routes/categories');
 const mongoose = require("mongoose");
 const session = require("express-session");
-const passport = require("./config/passport");
+// const passport = require("./config/passport");
 const googrouter = require("./routes/google")
 const cors = require('cors');
 const dotenv = require("dotenv");
@@ -33,16 +33,16 @@ const test =(req , res)=>{
 }
 
 
-app.use(
-  session({
-    secret: "yourSecretKey",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+// app.use(
+//   session({
+//     secret: "yourSecretKey",
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use(express.json())
 app.use('/category' , catRouter)
@@ -53,7 +53,7 @@ app.use('/Users' , Loginroute )
 app.use('/wishlist' , wishrouter)
 app.use('/cart', cartRoute)
 app.get('/', test);
-app.use('/auth' , googrouter)
+// app.use('/auth' , googrouter)
 
 app.listen(port , ()=> {
     console.log('server running');
