@@ -3,6 +3,7 @@ node_modules/
 
 # Environment variables
 .env
+config.env
 
 # Logs
 npm-debug.log*
@@ -14,5 +15,5 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Optional
+# Build / distribution
 /dist
